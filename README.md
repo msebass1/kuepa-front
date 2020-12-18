@@ -1,18 +1,16 @@
- chalenge-treinta
-
-- Diseño del aplicativo (MOCKUP) [acá](https://marvelapp.com/prototype/545fcgb)
+PRUEBA DESARROLLADOR FULL STACK JAVASCRIPT
 
 ### Descripción y contexto
 
 ---
 
-web app en React y Firebase. permite visualizar los negocios existentes en la ciudad de Bogotá. La aplicación debe cuenta con un respectivo login y registro, además una sección en la que se habló sobre Treinta y de los múltiples beneficios de usar Treinta.
+web app en React y express. Tiene una seccion de registro y login para que los estudiantes puedan acceder a la platafortma de straming simulada con un chat envivo construido con socket.io .
 
-Puedes verla completa y probarla [acá](https://treinta-junior.web.app/)
+Puedes verla completa y probarla [acá](https:///)
 
 ### Preview
 
----![a](https://i.imgur.com/A7fVnl6.png)![b](https://i.imgur.com/Ah65eSH.png)
+---![a](https://i.imgur.com/p21mF6c.png)![b](https://imgur.com/qudWi73)
 
 ### Guía de instalación y ejecución
 
@@ -31,7 +29,7 @@ comandos :
 
 #### Dependencias
 
-El proyecto se inicio con create react app. Para la realización de los estilos y el wireframing se usó 'material ui'. No se usaron estilos en Css. Se usó la solución de material de estilos en javascript o 'jss'. El login y registro corre en 'firebase authenticate'. Tambien se usó la librería 'google maps react' para el desarrollo de la página del mapa.
+El proyecto se inicio con create react app. Para la realización de los estilos y el wireframing se usó 'material ui'. No se usaron estilos en Css. Se usó la solución de material de estilos en javascript o 'jss'. El login y registro corre en 'passport'. Tambien se usó la librería 'socket.io' para el desarrollo de la página de chat.
 
 
 ### Autor
