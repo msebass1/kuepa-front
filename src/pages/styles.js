@@ -33,13 +33,13 @@ const useStyles = makeStyles((theme)=>{
     width: '100%'
   },
   videoContainer:{
-    background: '#ff9a66',
     padding:'2%',
   },
   cardTitle: {
     fontSize: 10,
   },
   tableContainer: {
+    background: theme.palette.secondary.main,
     maxHeight: 440,
   },
 })});

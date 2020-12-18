@@ -15,11 +15,7 @@ export default function Clase({usuario,setPending}){
   }
   const [yourID, setYourID] = React.useState();
   const [newMessage, setNewMessage] = React.useState('');
-  const [messages,setMessages] = React.useState([
-    {autor:"mauel",body:"mensaje"},
-    {autor:"juan",body:"mensaje"},
-    {autor:"eduardo",body:"mensaje"}
-  ]);
+  const [messages,setMessages] = React.useState([]);
 
   const socketRef = React.useRef();
 
@@ -85,7 +81,7 @@ export default function Clase({usuario,setPending}){
 
       </Grid>
       <Grid item md={3}>
-	<Paper style={{height: 500, overflow: 'auto'}}>
+	<Paper style={{height: 500, overflow: 'auto' , margin:10}}>
 	<TableContainer >
 	  <Table stickyHeader>
 	    <TableBody>
@@ -95,7 +91,7 @@ export default function Clase({usuario,setPending}){
 		<Card>
 		  <CardContent>
 		    <Typography color="textSecondary" className={classes.cardTitle}>
-		      {mensaje.autor}
+		      {mensaje.user}
 		    </Typography>
 		    <Typography   gutterBottom>
 		      {mensaje.body}
