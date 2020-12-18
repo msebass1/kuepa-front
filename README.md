@@ -8,7 +8,7 @@ web app en React y express. Tiene una seccion de registro y login para que los e
 
 El repositorio del back lo puedes encontrar [acá](https://github.com/msebass1/kuepa-back)
 
-ya está deployado puedes ingresar y probarlo [acá](https://5fdcff59df1a1b1eda9ba296--gracious-hawking-e877a8.netlify.app/)
+ya está deployado puedes ingresar y probarlo [acá](https://5fdd04dcf5948200075187b2--gracious-hawking-e877a8.netlify.app/registro)
 
 ### Preview
 
