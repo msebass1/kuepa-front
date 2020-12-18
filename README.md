@@ -12,7 +12,7 @@ Puedes verla completa y probarla [acá](https:///)
 
 ---![a](https://i.imgur.com/p21mF6c.png)
 
----![b](https://imgur.com/qudWi73)
+---![b](https://imgur.com/qudWi73.png)
 
 ### Guía de instalación y ejecución
 
