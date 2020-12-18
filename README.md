@@ -10,8 +10,9 @@ Puedes verla completa y probarla [acá](https:///)
 
 ### Preview
 
----![a](https://i.imgur.com/p21mF6c.png) 
-[b](https://imgur.com/qudWi73)
+---![a](https://i.imgur.com/p21mF6c.png)
+
+---![b](https://imgur.com/qudWi73)
 
 ### Guía de instalación y ejecución
 
