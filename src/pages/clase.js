@@ -41,12 +41,14 @@ export default function Clase({usuario,setPending}){
     const messageObject = {
       body: newMessage,
       user: usuario.name,
+      role: usuario.role,
       id: yourID,
     };
     setNewMessage("");
     socketRef.current.emit("send message", messageObject);
   }
   
+
   return (
     <>
       <AppBar position="static">
@@ -92,6 +94,9 @@ export default function Clase({usuario,setPending}){
 		  <CardContent>
 		    <Typography color="textSecondary" className={classes.cardTitle}>
 		      {mensaje.user}
+		    </Typography>
+		    <Typography color="textSecondary" className={classes.cardTitle}>
+		      {mensaje.role}
 		    </Typography>
 		    <Typography   gutterBottom>
 		      {mensaje.body}
