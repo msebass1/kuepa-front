@@ -2,30 +2,54 @@ import React from 'react';
 import {Button,Grid,Box,Typography,Divider,AppBar,Toolbar,IconButton,Card,TableContainer,CardContent,Table,TableBody,TableRow,TableCell,Paper,TextField} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
 import useStyles from './styles';
+import io from 'socket.io-client';
 
 
-
-
-export default function Clase(){
+export default function Clase({usuario,setPending}){
   const classes = useStyles();
   const history = useHistory();
   const handleLogout = ()=>{
-    localStorage.removeItem('Usuario')
-    history.push('');
+    localStorage.removeItem('Usuario');
+    setPending(true);
+    history.push('/');
   }
+  const [yourID, setYourID] = React.useState();
   const [newMessage, setNewMessage] = React.useState('');
   const [messages,setMessages] = React.useState([
-    {autor:"mauel",message:"mensaje"},
-    {autor:"juan",message:"mensaje"},
-    {autor:"eduardo",message:"mensaje"}
+    {autor:"mauel",body:"mensaje"},
+    {autor:"juan",body:"mensaje"},
+    {autor:"eduardo",body:"mensaje"}
   ]);
-   const handleNewmassage = () => {
-     console.log('x')
-     setMessages(prev=>[
-       ...prev,{autor:'alguien',message:newMessage}
-       ]);
-     setNewMessage('');
-   }
+
+  const socketRef = React.useRef();
+
+  React.useEffect(()=>{
+    socketRef.current = io.connect('https://kuepa-back.herokuapp.com/');
+
+    socketRef.current.on('tu id es', id => {
+      setYourID(id);
+    })
+
+    socketRef.current.on("message", (message) => {
+      console.log("here",message);
+      receivedMessage(message);
+    })
+  },[])
+
+  function receivedMessage(message) {
+    setMessages(oldMsgs => [...oldMsgs, message]);
+  }
+
+  function sendMessage(e) {
+    e.preventDefault();
+    const messageObject = {
+      body: newMessage,
+      user: usuario.name,
+      id: yourID,
+    };
+    setNewMessage("");
+    socketRef.current.emit("send message", messageObject);
+  }
   
   return (
     <>
@@ -74,7 +98,7 @@ export default function Clase(){
 		      {mensaje.autor}
 		    </Typography>
 		    <Typography   gutterBottom>
-		      {mensaje.message}
+		      {mensaje.body}
 		    </Typography>
 		  </CardContent>
 		</Card>
@@ -90,7 +114,7 @@ export default function Clase(){
 	</TextField>
 	</Box>
 	<Box m={2}>
-	 <Button variant="contained" color="secondary" onClick={handleNewmassage}>Enviar</Button>
+	 <Button variant="contained" color="secondary" onClick={sendMessage}>Enviar</Button>
         </Box>
       </Grid>
     </Grid>

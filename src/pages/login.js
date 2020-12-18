@@ -11,7 +11,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default function Login({usuario}){
+export default function Login({usuario, setPending}){
   const classes = useStyles(theme);
   var history = useHistory();
   const [user,setUser] = React.useState({});
@@ -23,13 +23,18 @@ export default function Login({usuario}){
       [e.target.name]:e.target.value,
     }))
   }
+  console.log(usuario);
 
 
+  if(usuario !== null){
+    history.push('/clase')
+  }
 
   const handleSubmit = ()=> {
     axios.post('https://kuepa-back.herokuapp.com/auth/login',user)
     .then(data => {
       localStorage.setItem('Usuario', JSON.stringify(data.data.success));
+      setPending(true);
       
     })
     .catch((errores)=> {
