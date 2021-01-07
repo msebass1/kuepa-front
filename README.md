@@ -4,7 +4,7 @@ PRUEBA DESARROLLADOR FULL STACK JAVASCRIPT
 
 ---
 
-web app en React y express. Tiene una seccion de registro y login para que los estudiantes puedan acceder a la platafortma de straming simulada con un chat envivo construido con socket.io .
+web app en React y express. Tiene una seccion de registro y login para que los estudiantes puedan acceder a la platafortma de streaming simulada con un chat envivo construido con socket.io .
 
 El repositorio del back lo puedes encontrar [acá](https://github.com/msebass1/kuepa-back)
 
